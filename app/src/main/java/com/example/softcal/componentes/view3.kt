@@ -19,13 +19,15 @@ import androidx.compose.ui.window.PopupProperties
 fun view3() {
     var expanded by remember { mutableStateOf(false) }
     var selectedOption by remember { mutableStateOf("Selecciona una opción") }
-    val opciones = listOf("Opción 1", "Opción 2", "Opción 3", "Opción 4")
+    val opciones = listOf("Aritmética", "Geometría", "Álgebra", "Cálculo")
 
+
+    var valor ="hola"
 
 
     Column (modifier = Modifier.fillMaxSize())
     {
-        Text(text = "hola como estas mi boton de hablar")
+        Text(text = "${valor}")
 
         Box(modifier = Modifier.padding(16.dp)) {
             Column {
@@ -58,6 +60,12 @@ fun view3() {
                             onClick = {
                                 selectedOption = opcion
                                 expanded = false
+                                when (opcion) {
+                                    "Aritmética" -> {valor="aritmetica"}
+                                    "Geometría" -> {valor="geometria"}
+                                    "Álgebra" -> {valor="Aalgrebra"}
+                                    "Cálculo" -> {valor="Calculo"}
+                                }
                             },
                             text = {
                                 Text(
@@ -70,7 +78,6 @@ fun view3() {
                 }
             }
         }
-
 
 
 
